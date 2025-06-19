@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Kafka's Castle — Antechamber</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="scene">
+    <img src="background.png" id="bg" alt="Kafka's Castle Background" />
+  </div>
+
+  <button id="exitBtn">Exit</button>
+  <div id="timer">00:00</div>
+
+  <div id="content">
+    <h1><span class="gold">Antechamber</span></h1>
+    <h2 class="tagline">Your eternal wait begins…</h2>
+
+    <div id="chatbox" class="large">
+      <div id="messages"></div>
+      <input id="userInput" type="text" placeholder="Type the key or ask for a hint…" autocomplete="off" />
+    </div>
+  </div>
+
+  <!-- Exit confirmation modal -->
+  <div id="modalOverlay" class="hidden">
+    <div id="modalBox">
+      <h3 class="gold">Coward’s Door</h3>
+      <p>Running away already?</p>
+      <div class="modal-actions">
+        <button id="yesQuit">Yes</button>
+        <button id="noStay">No</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Congratulations modal -->
+  <div id="congratsOverlay" class="hidden">
+    <div id="congratsBox">
+      <h2 class="gold glow">Congratulations</h2>
+      <p id="congratsMsg"></p>
+      <button id="closeCongrats">Continue</button>
+    </div>
+  </div>
+
+  <script src="stage2.js"></script>
+</body>
+</html>

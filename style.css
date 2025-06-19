@@ -1,0 +1,196 @@
+/* ----------- General ----------- */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Georgia", serif;
+  color: #fff;
+  overflow: hidden;
+  background: #000;
+}
+
+/* ----------- Background ----------- */
+#scene {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85);
+}
+
+/* ----------- Timer & Exit ----------- */
+#timer {
+  position: fixed;
+  top: 15px;
+  right: 22px;
+  font-size: 1.4rem;
+  font-family: "Courier New", monospace;
+  color: #fff;
+  letter-spacing: 1px;
+  z-index: 10;
+}
+#exitBtn {
+  position: fixed;
+  top: 15px;
+  left: 22px;
+  font-size: 1rem;
+  padding: 6px 14px;
+  background: transparent;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  cursor: pointer;
+  transition: filter 0.3s;
+  z-index: 10;
+}
+#exitBtn:hover {
+  filter: drop-shadow(0 0 6px #d4af37);
+}
+
+/* ----------- Content ----------- */
+#content {
+  position: relative;
+  z-index: 5;
+  text-align: center;
+  padding-top: 10vh;
+  width: 100%;
+}
+
+.gold {
+  color: #d4af37;
+  text-shadow: 0 0 10px rgba(212,175,55,0.8);
+}
+h1 { font-size: 3.5rem; margin: 0; letter-spacing: 2px; }
+h2.tagline { font-size: 1.2rem; margin: 0 0 40px 0; }
+
+/* ----------- Chat Box ----------- */
+#chatbox {
+  width: 70%;
+  max-width: 700px;
+  margin: 0 auto;
+  background: rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 6px;
+  padding: 20px;
+  height: 260px;
+  display: flex;
+  flex-direction: column;
+}
+#chatbox.large { height: 420px; }
+
+#messages {
+  flex: 1;
+  overflow-y: auto;
+  font-size: 1rem;
+  text-align: left;
+}
+#userInput {
+  margin-top: 10px;
+  padding: 10px;
+  background: #111;
+  border: 1px solid #444;
+  color: #fff;
+  border-radius: 4px;
+}
+
+/* Names */
+.nameClerk { color: #ffd54f; }
+.nameYou   { color: #ffffff; }
+
+/* -------- Key & Enter (Landing) -------- */
+#keySection { margin-top: 30px; }
+#keyButton {
+  font-size: 3rem;
+  color: #d4af37;
+  filter: drop-shadow(0 0 6px #d4af37);
+  cursor: pointer;
+  display: none;
+}
+#enterBtn {
+  display: block;
+  margin: 10px auto 0;
+  padding: 10px 24px;
+  font-size: 1.1rem;
+  border: 1px solid #666;
+  background: rgba(0,0,0,0.4);
+  color: #666;
+  border-radius: 4px;
+  cursor: not-allowed;
+  transition: all 0.35s;
+}
+#enterBtn.active {
+  border-color: #d4af37;
+  background: rgba(212,175,55,0.15);
+  color: #fff;
+  cursor: pointer;
+  text-shadow: 0 0 6px #fff;
+}
+
+/* ----------- Modals ----------- */
+.hidden { display: none; }
+#modalOverlay, #congratsOverlay {
+  position: fixed; top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.8);
+  display:flex; align-items:center; justify-content:center;
+  z-index: 15;
+}
+#modalBox, #congratsBox {
+  background: #111;
+  border: 1px solid #d4af37;
+  padding: 20px 30px;
+  text-align: center;
+  max-width: 350px;
+}
+#congratsBox h2.glow { text-shadow: 0 0 8px #d4af37; }
+.modal-actions { margin-top: 20px; }
+.modal-actions button, #closeCongrats {
+  padding: 8px 18px;
+  margin: 0 10px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+.modal-actions button:hover, #closeCongrats:hover {
+  background: #d4af37;
+  color: #000;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  h1 { font-size: 2.3rem; }
+  #chatbox, #chatbox.large { width: 90%; }
+  #timer { font-size: 1.1rem; }
+}
+
+
+#winModal {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 9999;
+}
+.modalContent {
+  background: #111;
+  padding: 30px;
+  border: 1px solid #d4af37;
+  border-radius: 6px;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: 0 0 15px rgba(212,175,55,0.5);
+}
+.modalContent h2 {
+  margin-top: 0;
+}
+.modalContent p {
+  color: #ddd;
+}
